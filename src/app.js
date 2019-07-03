@@ -41,6 +41,7 @@ class App extends Component {
     try{
       const res = await wxLoginAsync()
       console.log(res)
+      //TODO call business api to get openid and set to userStore
     } catch(err){
       console.log("Err")
     }
