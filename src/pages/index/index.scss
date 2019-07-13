@@ -1,11 +1,129 @@
-.app{
-    .image{
-        height: 100%;
-    }
-    .btn{
-        position: fixed;
-        bottom: 40px;
-        left:50%;
-        transform: translateX(-50%)
-    }
+.header{
+	display: flex;
+	justify-content: center;
+	.activeBtn{
+		margin: 0 10PX;
+		border: none;
+		background-color: #00CCFF;
+		font-size: 13PX;
+	}
+	.normalBtn{
+		margin:0 10PX;
+		border: none;
+		color: black;
+		font-size: 13PX;
+	}
+}
+
+.pageShow{
+	transform: translate3d(0,0,0);
+	transition: 0.15s all linear;
+}
+
+.pageUnshow{
+	transform: translate3d(-100%, 0, 0);
+	transition: 0.15s all linear;
+}
+
+.swiper{
+	max-height: 155PX;
+	.swiperItem{
+		padding: 0 3%;
+	}
+}
+.items{
+	padding-top: 5PX;
+	padding-left: 5PX;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	.tags{
+		.item{
+			margin-left:10PX;
+			font-size: 15PX;
+			font-family: sans-serif;
+		}
+		.active{
+			color: #00CCFF;
+			border-bottom: 2PX solid #00CCFF;
+		}
+	}
+	.at-icon{
+		margin-right: 18PX;
+		color: #666666;
+		font-size: 20PX;
+	}
+}
+.divider{
+	border: 1PX solid #F2F2F2;
+}
+.card{
+	display: flex;
+	flex-direction: row;
+	padding: 10PX 10PX;
+	.main{
+		display: flex;
+		flex-direction: column;
+		padding-left: 5PX;
+		.userInfo{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			.user{
+				.nickname{
+					font-size: 15PX
+				}
+				.time{
+					font-size: 13PX;
+					color: #666666;
+				}
+			}
+			.add{
+				margin-right: 10PX;
+				font-size: 15PX;
+				color: #00CCFF;
+			}
+		}
+		.content{
+			margin-top: 6PX;
+			margin-bottom: 5PX;
+			font-size: 15PX;
+		}
+		.img{
+			display: flex;
+			flex-wrap: wrap;
+			.img-item{
+				flex: 0 0 31%;
+				padding: 0 2PX;
+			}
+		}
+		.tags{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			.tag{
+				.tag-count{
+					text-align: center;
+				}
+				.at-icon{
+					font-size: 22PX;
+				}
+			}
+			.tag-end{
+				margin-right: 100PX;
+			}
+		}
+	}
+}
+.cards{
+	margin-bottom: 58PX;
+}
+.publishBtn {
+	position: fixed;
+	top: 85vh;
+	left: 85vw;
+	background-color: #00CCFF;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 40PX;
 }

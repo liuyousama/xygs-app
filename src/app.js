@@ -26,8 +26,40 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index'
+			'pages/index/detail',
+			'pages/index/publish',
+      'pages/index/index',
     ],
+		tabBar: {
+      color: "#626567",
+      selectedColor: "#00CCFF",
+      backgroundColor: "#FBFBFB",
+      borderStyle: "white",
+      list: [{
+        pagePath: "pages/index/index",
+        text: "拾趣社",
+        iconPath: "./icons/home.png",
+        selectedIconPath: "./icons/home.png"
+      },
+      {
+        pagePath: "pages/index/index",
+        text: "淘物社",
+        iconPath: "./icons/shop.png",
+        selectedIconPath: "./icons/shop.png"
+      },
+      {
+        pagePath: "pages/index/index",
+        text: "福利社",
+        iconPath: "./icons/welfare.png",
+        selectedIconPath: "./icons/welfare.png"
+      },
+      {
+        pagePath: "pages/index/index",
+        text: "我的",
+        iconPath: "./icons/me.png",
+        selectedIconPath: "./icons/me.png"
+      }]
+    },
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',

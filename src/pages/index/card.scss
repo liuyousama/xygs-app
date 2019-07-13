@@ -1,0 +1,55 @@
+.card{
+	display: flex;
+	flex-direction: row;
+	padding: 10PX 10PX;
+	.main{
+		display: flex;
+		flex-direction: column;
+		padding-left: 5PX;
+		.userInfo{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			.user{
+				.nickname{
+					font-size: 15PX
+				}
+				.time{
+					font-size: 13PX;
+					color: #666666;
+				}
+			}
+			.add{
+				margin-right: 10PX;
+				font-size: 15PX;
+				color: #00CCFF;
+			}
+		}
+		.content{
+			margin-top: 6PX;
+			margin-bottom: 5PX;
+			font-size: 15PX;
+		}
+		.img{
+			display: flex;
+			flex-wrap: wrap;
+			.img-item{
+				flex: 0 0 31%;
+				padding: 0 2PX;
+			}
+		}
+		.tags{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			.tag{
+				.tag-count{
+					text-align: center;
+				}
+			}
+			.tag-end{
+				margin-right: 100PX;
+			}
+		}
+	}
+}
