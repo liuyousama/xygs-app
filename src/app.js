@@ -14,6 +14,7 @@ import {default as myGroupStore} from './store/myGroups'
 import './app.scss'
 import 'taro-ui/dist/style/index.scss'
 import { wxLoginAsync } from './api/wxApi';
+import { getOpenId } from './api/api';
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -91,6 +92,9 @@ class App extends Component {
     try{
       const res = await wxLoginAsync()
       console.log(res)
+      const openId = await getOpenId({js_code:res.code})
+      console.log(openId)
+      store.userStore.setOpenId(openId.data.openid)
     } catch(err){
       console.log("Err")
     }

@@ -16,6 +16,7 @@ class User {
     setOpenId(openId) {
         this.openId = openId
     }
+    
 
     @action.bound
     setWechatDetail(wechatUser) {

@@ -28,7 +28,6 @@ class Request {
         const finalUrl = this.baseUrl + url + '?';
 
         const mappedParams =  keys.reduce((acc,current)=>`${acc}&${current.key}=${current.value}`,finalUrl)
-
         console.log(finalUrl)
 
         return new Promise((resolve,reject)=>{
