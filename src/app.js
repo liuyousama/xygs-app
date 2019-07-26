@@ -5,11 +5,16 @@ import Index from './pages/index'
 
 import {default as userStore} from './store/user'
 import {default as appStore} from './store/app'
+import {default as myPubStore} from './store/myPublish'
+import {default as myFavoriteStore} from './store/myFavorite'
+import {default as myCollectionStore} from './store/myCollection'
+import {default as myGroupStore} from './store/myGroups'
 
 
 import './app.scss'
 import 'taro-ui/dist/style/index.scss'
 import { wxLoginAsync } from './api/wxApi';
+import { getOpenId } from './api/api';
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -19,7 +24,11 @@ import { wxLoginAsync } from './api/wxApi';
 
 const store = {
   userStore,
-  appStore
+  appStore,
+  myPubStore,
+  myFavoriteStore,
+  myCollectionStore,
+  myGroupStore
 }
 
 class App extends Component {
@@ -31,7 +40,17 @@ class App extends Component {
 			'pages/index/publish',
 			'pages/index/personInfo',
 			'pages/index/createGroup',
-			'pages/index/groupDiscover'
+			'pages/index/groupDiscover',
+      'pages/my/my',
+      'pages/cards/index',
+      'pages/collection/index',
+      'pages/custom/index',
+      'pages/favorite/index',
+      'pages/groups/index',
+      'pages/messages/index',
+      'pages/publish/index',
+      'pages/personInfo/index',
+      'pages/edit/index',
     ],
 		tabBar: {
       color: "#626567",
@@ -57,7 +76,7 @@ class App extends Component {
         selectedIconPath: "./icons/welfare.png"
       },
       {
-        pagePath: "pages/index/index",
+        pagePath: "pages/my/my",
         text: "我的",
         iconPath: "./icons/me.png",
         selectedIconPath: "./icons/me.png"
@@ -76,6 +95,9 @@ class App extends Component {
     try{
       const res = await wxLoginAsync()
       console.log(res)
+      const openId = await getOpenId({js_code:res.code})
+      console.log(openId)
+      store.userStore.setOpenId(openId.data.openid)
     } catch(err){
       console.log("Err")
     }
