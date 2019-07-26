@@ -29,6 +29,9 @@ class App extends Component {
       'pages/index/index',
 			'pages/index/detail',
 			'pages/index/publish',
+			'pages/index/personInfo',
+			'pages/index/createGroup',
+			'pages/index/groupDiscover'
     ],
 		tabBar: {
       color: "#626567",
